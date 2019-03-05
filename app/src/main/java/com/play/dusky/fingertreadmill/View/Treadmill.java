@@ -99,9 +99,7 @@ public class Treadmill extends View implements View.OnTouchListener,GestureDetec
     Foot foot=new Foot();
     @Override
     public boolean onDown(MotionEvent e) {
-        foot.footX=e.getX();
-        foot.footY=e.getY();
-        mHandler.sendEmptyMessage(1);
+
         return false;
     }
 
@@ -117,6 +115,9 @@ public class Treadmill extends View implements View.OnTouchListener,GestureDetec
 
     @Override
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+        foot.footX=e1.getX();
+        foot.footY=e1.getY();
+        mHandler.sendEmptyMessage(1);
         return false;
     }
 
@@ -127,6 +128,7 @@ public class Treadmill extends View implements View.OnTouchListener,GestureDetec
 
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+
         return false;
     }
 
